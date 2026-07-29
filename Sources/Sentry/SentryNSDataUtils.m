@@ -36,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
     if (err != Z_OK) {
         if (error) {
             // Parse the zlib error code and provide a descriptive error
-            NSString *errorDescription = @"deflateInit2 error";
+            NSString *errorDescription = [NSString stringWithFormat:@"deflateInit2 error: %d", err];
             switch (err) {
                 case Z_MEM_ERROR:
                     errorDescription = @"deflateInit2 error: not enough memory";
